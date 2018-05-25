@@ -2,6 +2,10 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require_relative 'pangram'
 
+module BookKeeping
+  VERSION = 6 # Where the version number matches the one in the test.
+end
+
 # Common test data version: 1.3.0 d79e13e
 class PangramTest < Minitest::Test
   def test_sentence_empty
@@ -68,7 +72,7 @@ class PangramTest < Minitest::Test
   end
 
   def test_upper_and_lower_case_versions_of_the_same_character_should_not_be_counted_separately
-    skip
+    # skip
     phrase = 'the quick brown fox jumps over with lazy FX'
     result = Pangram.pangram?(phrase)
     refute result, "Expected false, got: #{result.inspect}. #{phrase.inspect} is NOT a pangram"
