@@ -54,14 +54,14 @@ class PangramTest < Minitest::Test
   end
 
   def test_missing_letters_replaced_by_numbers
-    skip
+    # skip
     phrase = '7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog'
     result = Pangram.pangram?(phrase)
     refute result, "Expected false, got: #{result.inspect}. #{phrase.inspect} is NOT a pangram"
   end
 
   def test_pangram_with_mixed_case_and_punctuation
-    skip
+    # skip
     phrase = '"Five quacking Zephyrs jolt my wax bed."'
     result = Pangram.pangram?(phrase)
     assert result, "Expected true, got: #{result.inspect}. #{phrase.inspect} IS a pangram"

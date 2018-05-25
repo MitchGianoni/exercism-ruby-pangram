@@ -5,6 +5,6 @@ ALPHABET = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
 
 class Pangram
   def self.pangram?(text)
-    text.gsub(/[_\s1-9]/,'').split('').uniq.sort == ALPHABET
+    text.downcase.gsub(/[_\s1-9[:punct:]]/,'').split('').uniq.sort == ALPHABET
   end
 end
